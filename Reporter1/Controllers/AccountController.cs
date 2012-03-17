@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 using Reporter1.Models;
 
 namespace Reporter1.Controllers
@@ -33,6 +34,7 @@ namespace Reporter1.Controllers
 
         public ActionResult LogOn()
         {
+            
             return View();
         }
 

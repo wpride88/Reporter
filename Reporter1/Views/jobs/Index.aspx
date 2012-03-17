@@ -1,18 +1,13 @@
 ﻿<%@ Page Title="wpride88" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" 
 Inherits="System.Web.Mvc.ViewPage<IEnumerable<Reporter1.Models.jobs>>" %>
+<%@ Import Namespace="Reporter1.Controllers" %>
 
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-    }
-</script>
-
-<script runat = "server"
->    protected void Page_Refresh(object sender, EventArgs e)
-    {
-
-        Page_Refresh(sender, e);
+        //System.Web.UI.Page wp = new System.Web.UI.Page();
+        ///string firstName = (string)(Session["LgUser"]);
+        // Items.Add(firstName);
     }
 </script>
 
@@ -24,40 +19,26 @@ Inherits="System.Web.Mvc.ViewPage<IEnumerable<Reporter1.Models.jobs>>" %>
 
         <form id="form1" runat="server">
 
-        <h2>Hello,  <%: Page.User.Identity.Name %>. This is Main jobs report creater page.
-                        <% string sss = Page.User.Identity.Name.ToString(); %>
-                
-        <asp:SqlDataSource 
-                ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:REPORTERConnectionString %>" 
-                SelectCommand="SELECT * FROM [SumTimeview2] WHERE ([Login] = @Login)">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="DropDownList1" Name="Login" 
-                    PropertyName="SelectedValue" Type="String" />
-            </SelectParameters>
+        <h2>Hello,  <%: Page.User.Identity.Name %>. This is Main jobs report creater page.&nbsp;
+      <%--<%
+                string s = Page.User.Identity.Name.ToString();
+                string sss = s; %>
+            <%  string firstName = (string)(Session["LgUser"]);   %>   --%>        
+           
+           <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+            ConnectionString="<%$ ConnectionStrings:REPORTERConnectionString %>"
+            SelectCommand="SELECT * FROM [SumTimeview2] WHERE ([Login] = @Login)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="Login" SessionField="LgUser" Type="String" />
+                </SelectParameters>
             </asp:SqlDataSource>
+            
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:REPORTERConnectionString2 %>" 
-                SelectCommand="SELECT [Login] FROM [Logins1]"></asp:SqlDataSource>
-         
-            <% System.Web.UI.WebControls.Parameter pp = new System.Web.UI.WebControls.Parameter();
-            pp.Name = "Login";
-            //pp.DefaultValue = sss;
-            SqlDataSource2.SelectCommand = "SELECT DISTINCT [Login] FROM [Logins1]";
-            SqlDataSource2.SelectParameters.Add(pp);
-            %>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:REPORTERConnectionString3 %>" 
-                SelectCommand="SELECT DISTINCT [Login] FROM [Logins1]">
-            </asp:SqlDataSource>
+                SelectCommand="SELECT [Login] FROM [UsersRP]"></asp:SqlDataSource>
+        
         </h2>
 
-                <asp:DropDownList ID="DropDownList1" runat="server" 
-                    DataSourceID="SqlDataSource2" DataTextField="Login" 
-                    DataValueField="Login" onselectedindexchanged="Page_Refresh">     
-                </asp:DropDownList>
-
-     <p>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" 
             GridLines="None" AllowPaging="True">
@@ -66,7 +47,7 @@ Inherits="System.Web.Mvc.ViewPage<IEnumerable<Reporter1.Models.jobs>>" %>
                 <asp:BoundField DataField="Date" HeaderText="Дата" SortExpression="Date" />
                 <asp:BoundField DataField="JTitle" HeaderText="Тип времени" 
                     SortExpression="JTitle" />
-                <asp:BoundField DataField="Login" HeaderText="Имя пользователя" 
+                <asp:BoundField DataField="Login" HeaderText="Имя работника" 
                     SortExpression="Login" />
                 <asp:BoundField DataField="SumTime1" HeaderText="Суммарное время" 
                     SortExpression="SumTime1" />
@@ -83,7 +64,6 @@ Inherits="System.Web.Mvc.ViewPage<IEnumerable<Reporter1.Models.jobs>>" %>
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-        </p>
      <p>
                 <%: Html.ActionLink("Create New", "Create") %>
 

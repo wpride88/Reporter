@@ -43,7 +43,7 @@ namespace Reporter1.Controllers
              //GROUP BY dbo.jobs.Date, dbo.jobtype.JTitle, dbo.UsersRP.Login, dbo.jobs.Jname)
 
                System.Web.UI.WebControls.Parameter pp = new System.Web.UI.WebControls.Parameter();
-               string sss;
+               //string sss;
 
                //pp.Name = "Login";
                //pp.DefaultValue = sss; 

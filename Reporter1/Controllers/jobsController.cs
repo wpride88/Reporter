@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI;
 using Reporter1.Models;
+using Reporter1.Controllers;
 using LinqToSqlShared;
 
 namespace Reporter1.Controllers
@@ -16,40 +18,17 @@ namespace Reporter1.Controllers
         public ActionResult Index()
         {
             REPORTEREntities1 db = new REPORTEREntities1();
-            
-            //string login = "wpride88";
-            //List<UserRPController> usrp = new List<UserRPController>();
-            //ViewData
-            //var jobs = from m in db.jobs
-            //             where (m.Jid > 0)
-            //             select m;
-            //return View(jobs.ToList());
-            return View();
+            System.Web.UI.Page wp = new System.Web.UI.Page();
+            //string firstName = "wpride88";
+            //if (Session != null) Session.Add("LgUser", firstName);
+            // Redirect to second page.
 
-            //var query =
-            //from t1 in db.tReturnDoc
-            //from t2 in db.tTopicality
-            //where
-            //t1.Topicality_ID == t2.Topicality_ID
-            //select new
-            //{
-            //    t1.Comments,
-            //    t1.Theme,
-            //    t1.Topicality_ID,
-            //    t2.Topicality_Name
-            //};
-            //var query =
-            //    from t1 in db.jobs
-            //    from t2 in db.jtype
-            //    where t1.Jtid == t2.Jtid
-            //    select new
-            //    {
-            //        t1.Jname,
-            //        t1.Jtimeh,
-            //        t1.Jtid,
-            //        t2.Jtname
-            //    };
-            //return View(query.ToList);
+            //string sss = Page.User.Identity.Name;
+            
+            System.Web.UI.Page pg = new System.Web.UI.Page();
+            string sss = pg.User.Identity.Name;
+            Session["LgUser"] = sss;
+            return View();
         }
 
         // 

@@ -14,15 +14,15 @@
         <fieldset>
             <legend>Fields</legend>
             
-            <div class="editor-label">
+<%--            <div class="editor-label">
                 <%: Html.LabelFor(model => model.Jid) %>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Jid) %>
                 <%: Html.ValidationMessageFor(model => model.Jid) %>
-            </div>
+            </div>--%>
             
-            <div class="editor-label">
+            <div class="editor-label" title="Тип времени">
                 <%: Html.LabelFor(model => model.Jname) %>
             </div>
             <div class="editor-field">
@@ -47,7 +47,7 @@
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Uid) %>
+                <%: Html.LabelFor(model => model.UsersRP.Login) %>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Uid) %>

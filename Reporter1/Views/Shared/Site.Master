@@ -26,6 +26,7 @@
                         <%if (Request.IsAuthenticated)
                           {
                         %>
+                            
                             <li><%: Html.ActionLink("Enter jobs", "Index", "jobs")%></li>
                             [   <%: Html.ActionLink("Выход", "LogOff", "Account") %> ]
                         <%      
