@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REPORTERModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="REPORTEREntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="jobs" EntityType="REPORTERModel.jobs" />
+    <EntitySet Name="UsersRP" EntityType="REPORTERModel.UsersRP" />
+    <AssociationSet Name="FK_jobs_UsersRP" Association="REPORTERModel.FK_jobs_UsersRP">
+      <End Role="UsersRP" EntitySet="UsersRP" />
+      <End Role="jobs" EntitySet="jobs" />
+    </AssociationSet>
+    <EntitySet Name="jobtype" EntityType="REPORTERModel.jobtype" />
+    <AssociationSet Name="FK_jobs_jobtype" Association="REPORTERModel.FK_jobs_jobtype">
+      <End Role="jobtype" EntitySet="jobtype" />
+      <End Role="jobs" EntitySet="jobs" />
+    </AssociationSet>
+    <EntitySet Name="dtproperties" EntityType="REPORTERModel.dtproperties" />
+    <EntitySet Name="sysdiagrams" EntityType="REPORTERModel.sysdiagrams" />
+  </EntityContainer>
+  <EntityType Name="jobs">
+    <Key>
+      <PropertyRef Name="Jid" />
+    </Key>
+    <Property Name="Jid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Jname" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Jtimeh" Type="Int32" Nullable="false" />
+    <Property Name="Uid" Type="Int32" Nullable="false" />
+    <Property Name="Jtid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UsersRP" Relationship="REPORTERModel.FK_jobs_UsersRP" FromRole="jobs" ToRole="UsersRP" />
+    <NavigationProperty Name="jobtype" Relationship="REPORTERModel.FK_jobs_jobtype" FromRole="jobs" ToRole="jobtype" />
+  </EntityType>
+  <EntityType Name="UsersRP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="Pass" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="jobs" Relationship="REPORTERModel.FK_jobs_UsersRP" FromRole="UsersRP" ToRole="jobs" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_jobs_UsersRP">
+    <End Type="REPORTERModel.UsersRP" Role="UsersRP" Multiplicity="1" />
+    <End Type="REPORTERModel.jobs" Role="jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersRP">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="jobs">
+        <PropertyRef Name="Uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="jobtype">
+    <Key>
+      <PropertyRef Name="Jid" />
+    </Key>
+    <Property Type="Int32" Name="Jid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="JTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="jobs" Relationship="REPORTERModel.FK_jobs_jobtype" FromRole="jobtype" ToRole="jobs" />
+  </EntityType>
+  <Association Name="FK_jobs_jobtype">
+    <End Type="REPORTERModel.jobtype" Role="jobtype" Multiplicity="1" />
+    <End Type="REPORTERModel.jobs" Role="jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jobtype">
+        <PropertyRef Name="Jid" />
+      </Principal>
+      <Dependent Role="jobs">
+        <PropertyRef Name="Jtid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="objectid" />
+    <Property Type="String" Name="property" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="value" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="uvalue" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="lvalue" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="version" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

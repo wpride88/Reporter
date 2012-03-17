@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REPORTERModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="REPORTERModelStoreContainer">
+    <EntitySet Name="dtproperties" EntityType="REPORTERModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="jobs" EntityType="REPORTERModel.Store.jobs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="jobtype" EntityType="REPORTERModel.Store.jobtype" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="REPORTERModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersRP" EntityType="REPORTERModel.Store.UsersRP" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_jobs_jobtype" Association="REPORTERModel.Store.FK_jobs_jobtype">
+      <End Role="jobtype" EntitySet="jobtype" />
+      <End Role="jobs" EntitySet="jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_jobs_UsersRP" Association="REPORTERModel.Store.FK_jobs_UsersRP">
+      <End Role="UsersRP" EntitySet="UsersRP" />
+      <End Role="jobs" EntitySet="jobs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="jobs">
+    <Key>
+      <PropertyRef Name="Jid" />
+    </Key>
+    <Property Name="Jid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Jname" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Jtimeh" Type="int" Nullable="false" />
+    <Property Name="Uid" Type="int" Nullable="false" />
+    <Property Name="Jtid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="jobtype">
+    <Key>
+      <PropertyRef Name="Jid" />
+    </Key>
+    <Property Name="Jid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UsersRP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="nchar" Nullable="false" MaxLength="20" />
+    <Property Name="Pass" Type="nvarchar" MaxLength="32" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_jobs_jobtype">
+    <End Role="jobtype" Type="REPORTERModel.Store.jobtype" Multiplicity="1" />
+    <End Role="jobs" Type="REPORTERModel.Store.jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jobtype">
+        <PropertyRef Name="Jid" />
+      </Principal>
+      <Dependent Role="jobs">
+        <PropertyRef Name="Jtid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_jobs_UsersRP">
+    <End Role="UsersRP" Type="REPORTERModel.Store.UsersRP" Multiplicity="1" />
+    <End Role="jobs" Type="REPORTERModel.Store.jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersRP">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="jobs">
+        <PropertyRef Name="Uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

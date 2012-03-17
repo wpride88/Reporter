@@ -1,0 +1,10 @@
+c:\documents and settings\администратор\мои документы\visual studio 2010\Projects\Reporter1\Reporter1\bin\Reporter1.dll
+c:\documents and settings\администратор\мои документы\visual studio 2010\Projects\Reporter1\Reporter1\bin\Reporter1.pdb
+c:\documents and settings\администратор\мои документы\visual studio 2010\Projects\Reporter1\Reporter1\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\администратор\мои документы\visual studio 2010\Projects\Reporter1\Reporter1\obj\Debug\Reporter1.dll
+c:\documents and settings\администратор\мои документы\visual studio 2010\Projects\Reporter1\Reporter1\obj\Debug\Reporter1.pdb
+C:\Mydoc\Visual Studio 2010\Projects\Reporter1\Reporter1\bin\Reporter1.dll
+C:\Mydoc\Visual Studio 2010\Projects\Reporter1\Reporter1\bin\Reporter1.pdb
+C:\Mydoc\Visual Studio 2010\Projects\Reporter1\Reporter1\obj\Debug\ResolveAssemblyReference.cache
+C:\Mydoc\Visual Studio 2010\Projects\Reporter1\Reporter1\obj\Debug\Reporter1.dll
+C:\Mydoc\Visual Studio 2010\Projects\Reporter1\Reporter1\obj\Debug\Reporter1.pdb

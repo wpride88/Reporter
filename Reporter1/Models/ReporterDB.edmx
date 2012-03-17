@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="REPORTERModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="REPORTERModelStoreContainer">
+          <EntitySet Name="dtproperties" EntityType="REPORTERModel.Store.dtproperties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="jobs" EntityType="REPORTERModel.Store.jobs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="jobtype" EntityType="REPORTERModel.Store.jobtype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="REPORTERModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersRP" EntityType="REPORTERModel.Store.UsersRP" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_jobs_jobtype" Association="REPORTERModel.Store.FK_jobs_jobtype">
+            <End Role="jobtype" EntitySet="jobtype" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_jobs_UsersRP" Association="REPORTERModel.Store.FK_jobs_UsersRP">
+            <End Role="UsersRP" EntitySet="UsersRP" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="dtproperties">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="property" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="objectid" Type="int" />
+          <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="value" Type="varchar" MaxLength="255" />
+          <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+          <Property Name="lvalue" Type="image" />
+          <Property Name="version" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobs">
+          <Key>
+            <PropertyRef Name="Jid" />
+          </Key>
+          <Property Name="Jid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Jname" Type="nvarchar" Nullable="false" MaxLength="80" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Jtimeh" Type="int" Nullable="false" />
+          <Property Name="Uid" Type="int" Nullable="false" />
+          <Property Name="Jtid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="jobtype">
+          <Key>
+            <PropertyRef Name="Jid" />
+          </Key>
+          <Property Name="Jid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="JTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UsersRP">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="32" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_jobs_jobtype">
+          <End Role="jobtype" Type="REPORTERModel.Store.jobtype" Multiplicity="1" />
+          <End Role="jobs" Type="REPORTERModel.Store.jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobtype">
+              <PropertyRef Name="Jid" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="Jtid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_jobs_UsersRP">
+          <End Role="UsersRP" Type="REPORTERModel.Store.UsersRP" Multiplicity="1" />
+          <End Role="jobs" Type="REPORTERModel.Store.jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersRP">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="Uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="REPORTERModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="REPORTEREntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="jobs" EntityType="REPORTERModel.jobs" />
+          <EntitySet Name="UsersRP" EntityType="REPORTERModel.UsersRP" />
+          <AssociationSet Name="FK_jobs_UsersRP" Association="REPORTERModel.FK_jobs_UsersRP">
+            <End Role="UsersRP" EntitySet="UsersRP" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <EntitySet Name="jobtype" EntityType="REPORTERModel.jobtype" />
+          <AssociationSet Name="FK_jobs_jobtype" Association="REPORTERModel.FK_jobs_jobtype">
+            <End Role="jobtype" EntitySet="jobtype" />
+            <End Role="jobs" EntitySet="jobs" />
+          </AssociationSet>
+          <EntitySet Name="dtproperties" EntityType="REPORTERModel.dtproperties" />
+          <EntitySet Name="sysdiagrams" EntityType="REPORTERModel.sysdiagrams" />
+        </EntityContainer>
+        <EntityType Name="jobs">
+          <Key>
+            <PropertyRef Name="Jid" />
+          </Key>
+          <Property Name="Jid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Jname" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Jtimeh" Type="Int32" Nullable="false" />
+          <Property Name="Uid" Type="Int32" Nullable="false" />
+          <Property Name="Jtid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UsersRP" Relationship="REPORTERModel.FK_jobs_UsersRP" FromRole="jobs" ToRole="UsersRP" />
+          <NavigationProperty Name="jobtype" Relationship="REPORTERModel.FK_jobs_jobtype" FromRole="jobs" ToRole="jobtype" />
+        </EntityType>
+        <EntityType Name="UsersRP">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="Pass" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="jobs" Relationship="REPORTERModel.FK_jobs_UsersRP" FromRole="UsersRP" ToRole="jobs" />
+          <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_jobs_UsersRP">
+          <End Type="REPORTERModel.UsersRP" Role="UsersRP" Multiplicity="1" />
+          <End Type="REPORTERModel.jobs" Role="jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersRP">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="Uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="jobtype">
+          <Key>
+            <PropertyRef Name="Jid" />
+          </Key>
+          <Property Type="Int32" Name="Jid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="JTitle" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="jobs" Relationship="REPORTERModel.FK_jobs_jobtype" FromRole="jobtype" ToRole="jobs" />
+        </EntityType>
+        <Association Name="FK_jobs_jobtype">
+          <End Type="REPORTERModel.jobtype" Role="jobtype" Multiplicity="1" />
+          <End Type="REPORTERModel.jobs" Role="jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="jobtype">
+              <PropertyRef Name="Jid" />
+            </Principal>
+            <Dependent Role="jobs">
+              <PropertyRef Name="Jtid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="dtproperties">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="property" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="objectid" />
+          <Property Type="String" Name="property" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="value" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="uvalue" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="lvalue" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="version" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="REPORTERModelStoreContainer" CdmEntityContainer="REPORTEREntities1">
+          <EntitySetMapping Name="jobs"><EntityTypeMapping TypeName="REPORTERModel.jobs"><MappingFragment StoreEntitySet="jobs">
+            <ScalarProperty Name="Jid" ColumnName="Jid" />
+            <ScalarProperty Name="Jname" ColumnName="Jname" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="Jtimeh" ColumnName="Jtimeh" />
+            <ScalarProperty Name="Uid" ColumnName="Uid" />
+            <ScalarProperty Name="Jtid" ColumnName="Jtid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UsersRP"><EntityTypeMapping TypeName="REPORTERModel.UsersRP"><MappingFragment StoreEntitySet="UsersRP">
+            <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Login" ColumnName="Login" />
+            <ScalarProperty Name="Pass" ColumnName="Pass" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="jobtype">
+            <EntityTypeMapping TypeName="REPORTERModel.jobtype">
+              <MappingFragment StoreEntitySet="jobtype">
+                <ScalarProperty Name="JTitle" ColumnName="JTitle" />
+                <ScalarProperty Name="Jid" ColumnName="Jid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtproperties">
+            <EntityTypeMapping TypeName="REPORTERModel.dtproperties">
+              <MappingFragment StoreEntitySet="dtproperties">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+                <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="property" ColumnName="property" />
+                <ScalarProperty Name="objectid" ColumnName="objectid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="REPORTERModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ReporterDB">
+        <EntityTypeShape EntityType="REPORTERModel.jobs" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9210009765625" IsExpanded="true" />
+        <EntityTypeShape EntityType="REPORTERModel.UsersRP" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4279589843749996" IsExpanded="true" />
+        <AssociationConnector Association="REPORTERModel.FK_jobs_UsersRP" >
+          <ConnectorPoint PointX="1.5" PointY="3.75" />
+          <ConnectorPoint PointX="1.5" PointY="2.9996956380208331" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="REPORTERModel.jobtype" Width="1.5" PointX="3.375" PointY="3.875" Height="1.4279589843749996" />
+        <AssociationConnector Association="REPORTERModel.FK_jobs_jobtype" >
+          <ConnectorPoint PointX="3.375" PointY="3.875" />
+          <ConnectorPoint PointX="3" PointY="3.5" />
+          <ConnectorPoint PointX="3" PointY="1.8748478190104163" />
+          <ConnectorPoint PointX="2.25" PointY="1.8748478190104163" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="REPORTERModel.dtproperties" Width="1.5" PointX="3.375" PointY="0.75" Height="2.0853483072916656" />
+        <EntityTypeShape EntityType="REPORTERModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="0.75" Height="1.7566536458333317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
