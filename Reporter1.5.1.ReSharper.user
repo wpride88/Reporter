@@ -10,7 +10,7 @@
     <ItemStatistics item="Default">
       <Item value="List" priority="1" />
       <Item value="UserRPController`0" priority="2" />
-      <Item value="new" priority="7" />
+      <Item value="new" priority="8" />
       <Item value="ViewData" priority="1" />
       <Item value="Model" priority="1" />
       <Item value="Reporter1" priority="10" />
@@ -80,6 +80,7 @@
       <Item value="DropDownList`0" priority="0" />
       <Item value="DDLogin" priority="0" />
       <Item value="static" priority="0" />
+      <Item value="Page`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Reporter1.MvcApplication">
       <Item value="RegisterRoutes`0" priority="0" />
@@ -95,7 +96,9 @@
       <Item value="Jtimeh" priority="1" />
       <Item value="Uid" priority="3" />
       <Item value="Date" priority="1" />
-      <Item value="UsersRP" priority="2" />
+      <Item value="UsersRP" priority="4" />
+      <Item value="jobtype" priority="1" />
+      <Item value="Jname" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.Objects.ObjectSet`1">
       <Item value="Sum`1" priority="1" />
@@ -108,7 +111,7 @@
       <Item value="CreateUsersRP`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Reporter1.Models.UsersRP">
-      <Item value="Login" priority="1" />
+      <Item value="Login" priority="3" />
       <Item value="Pass" priority="0" />
       <Item value="UsersRP" priority="1" />
       <Item value="email" priority="0" />
@@ -163,6 +166,9 @@
     <ItemStatistics item="Qualified:System.Web.HttpSessionStateBase">
       <Item value="Add`0" priority="0" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:Reporter1.Models.jobtype">
+      <Item value="JTitle" priority="1" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
@@ -173,7 +179,6 @@
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Details.aspx" caret="0" fromTop="0" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:HomeController.cs" caret="321" fromTop="13" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:Account/f:Register.aspx" caret="354" fromTop="0" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Models/f:ReporterDB.Designer.cs" caret="0" fromTop="0" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Scripts/f:jquery.validate.min.js" caret="6630" fromTop="20" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Scripts/f:jquery.validate.js" caret="8801" fromTop="5" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Scripts/f:jquery.validate-vsdoc.js" caret="213" fromTop="3" />
@@ -186,41 +191,43 @@
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:Home/f:Index.aspx" caret="605" fromTop="12" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:Account/f:LogOn.aspx" caret="0" fromTop="0" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:Shared/f:LogOnUserControl.ascx" caret="255" fromTop="6" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1623" fromTop="45" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="830" fromTop="14" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="778" fromTop="12" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="1680" fromTop="7" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1027" fromTop="10" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Models/f:ReporterDB.Designer.cs" caret="0" fromTop="0" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1133" fromTop="22" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="2096" fromTop="15" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="477" fromTop="12" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="302" fromTop="13" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1370" fromTop="20" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1128" fromTop="21" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:Shared/f:Site.Master" caret="1027" fromTop="25" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="2188" fromTop="19" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="338" fromTop="10" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="2163" fromTop="25" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1682" fromTop="11" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1682" fromTop="34" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1682" fromTop="18" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1682" fromTop="11" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1938" fromTop="30" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1938" fromTop="21" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1938" fromTop="24" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1938" fromTop="21" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1938" fromTop="18" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1938" fromTop="14" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1682" fromTop="24" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1682" fromTop="20" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="1052" fromTop="22" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="870" fromTop="22" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="865" fromTop="23" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1494" fromTop="11" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1750" fromTop="30" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1750" fromTop="21" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1750" fromTop="24" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1750" fromTop="21" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1750" fromTop="18" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1494" fromTop="24" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1494" fromTop="20" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="1099" fromTop="22" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="917" fromTop="22" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="912" fromTop="23" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="312" fromTop="7" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:SSQLController.cs" caret="1773" fromTop="28" />
       <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="168" fromTop="6" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="818" fromTop="14" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="588" fromTop="18" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1623" fromTop="27" />
-      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1172" fromTop="19" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:jobsController.cs" caret="779" fromTop="18" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="842" fromTop="15" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1469" fromTop="17" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="555" fromTop="12" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1208" fromTop="16" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="492" fromTop="7" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Controllers/f:AccountController.cs" caret="1289" fromTop="28" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Index.aspx" caret="1758" fromTop="29" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="1100" fromTop="17" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="1545" fromTop="25" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="2006" fromTop="21" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="2337" fromTop="20" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="492" fromTop="9" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="798" fromTop="16" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="2242" fromTop="32" />
+      <File id="A5FA94AC-F791-47B5-9986-8D9BD38BCBC9/d:Views/d:jobs/f:Create.aspx" caret="2773" fromTop="30" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

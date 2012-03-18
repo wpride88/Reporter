@@ -13,25 +13,22 @@
 
         <fieldset>
             <legend>Fields</legend>
-            
-<%--            <div class="editor-label">
-                <%: Html.LabelFor(model => model.Jid) %>
-            </div>
-            <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Jid) %>
-                <%: Html.ValidationMessageFor(model => model.Jid) %>
-            </div>--%>
-            
-            <div class="editor-label" title="Тип времени">
-                <%: Html.LabelFor(model => model.Jname) %>
-            </div>
+
+            <div> 
+                <asp:Label
+                    runat="server"
+                    class="editor-label" id="Jname" title="Название работы">Название задания
+                </asp:Label>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Jname) %>
                 <%: Html.ValidationMessageFor(model => model.Jname) %>
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Date) %>
+                <asp:Label
+                    runat="server"
+                    class="editor-label" id="Data" title="Дата">Дата
+                </asp:Label>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Date) %>
@@ -39,7 +36,10 @@
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Jtimeh) %>
+                <asp:Label
+                    runat="server"
+                    class="editor-label" id="Timeh" title="Время">Время потраченное на работу (часов)
+                </asp:Label>
             </div>
             <div class="editor-field">
                 <%: Html.TextBoxFor(model => model.Jtimeh) %>
@@ -47,19 +47,27 @@
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.UsersRP.Login) %>
+                <asp:Label
+                    runat="server"
+                    class="editor-label" id="Login" title="Login">Ваше Имя пользователя (Login)
+                </asp:Label>
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Uid) %>
-                <%: Html.ValidationMessageFor(model => model.Uid) %>
+                <%: Html.TextBoxFor(model => model.UsersRP.Login) %>
+                <%: Html.ValidationMessageFor(model => model.UsersRP.Login)%>
             </div>
             
             <div class="editor-label">
-                <%: Html.LabelFor(model => model.Jtid) %>
+                                <asp:Label
+                    runat="server"
+                    class="editor-label" id="TimeID" title="Тип времени">Тип времени (Self time, Rest time etc.)
+                </asp:Label>
+            </div>
+
             </div>
             <div class="editor-field">
-                <%: Html.TextBoxFor(model => model.Jtid) %>
-                <%: Html.ValidationMessageFor(model => model.Jtid) %>
+                <%: Html.TextBoxFor(model => model.jobtype.JTitle) %>
+                <%: Html.ValidationMessageFor(model => model.jobtype.JTitle)%>
             </div>
             
             <p>
